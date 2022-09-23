@@ -1,0 +1,45 @@
+
+interface SolarSystem{
+	void state();
+}
+
+abstract class Sun implements SolarSystem{
+     public void state(){
+		  	System.out.println("its very hot planet");
+	  }
+	abstract void color();
+	abstract void size();
+	
+}
+ class Earth extends Sun{
+	public void state(){
+		
+		System.out.println("it has atmosphere");
+	}
+	 void color(){
+		
+		System.out.println("green and blue");
+	}
+	 void size(){
+		System.out.println("fourth largest planet");
+	}
+}
+public class Moon extends Earth{
+	void cloud(){}
+	private void empty(){
+		cloud();// to call cloud method in child class from here 
+	}
+	public static void main(String [] args){
+		Moon obj=new Moon();
+		obj.color();
+		obj.state();
+		obj.empty();//to call NON-STATIC child method from here we created empty method
+	}
+}
+class Sky{
+	public void cloud(){
+		System.out.println("THIS IS CHILD CLASS CLOUD METHOD");
+	} 
+}
+
+
